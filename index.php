@@ -5,6 +5,11 @@
 
     $uri = trim($uri, '/');
 
+    if ($uri === '') {
+        include 'src/views/home.php';
+        exit;
+    }
+
     switch ($uri) {
         case 'home':
             include 'src/views/home.php';
