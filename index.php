@@ -17,3 +17,4 @@ switch ($uri) {
         echo 'Página não encontrada!';
         break;
 }
+?>
