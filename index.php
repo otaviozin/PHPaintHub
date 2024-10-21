@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Template</title>
-</head>
-<body>
-    <h1>Template de exemplo</h1>
-</body>
-</html>
+<?php
+
+$basePath = '/atividades/CRUD_PHP/';
+$uri = str_replace($basePath, '', $_SERVER['REQUEST_URI']);
+
+$uri = trim($uri, '/');
+
+switch ($uri) {
+    case 'login':
+        include 'src/views/login.php';
+        break;
+    case 'home':
+        include 'src/views/home.php';
+        break;
+    default:
+        http_response_code(404);
+        echo 'Página não encontrada!';
+        break;
+}
